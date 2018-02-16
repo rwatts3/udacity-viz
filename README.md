@@ -63,14 +63,22 @@ After performing a basic Exploratory Data Analysis on the dataset I was able to 
 Given the type of data found during the exploratory Data Analysis I was able to determine that subsetting specific pieces of the data was an important way to focus on each visualization.
 Below is a sketch of the types of charts that will be used for the visualization.
 
-### Grid / Table
+### Version 1 -> Feedback 1
+![V1](https://github.com/rwatts3/udacity-viz/raw/master/images/v1.png)
+After reviewing the design it was proposed to implement a clean solution that allows a viewer to easily navigate and distinguish between each chart.
+
+### Version 2 -> Feedback 2
+
+### Version 3 -> Feedback 3
+
 ### Bar Charts
 ### Line Charts
 
 ## Feedback
 ### Feedback 1
+> The sketch looks very nice! I would suggest providing clean sections that allow the charts to be easily distinghishable between the other charts. 
+
 ### Feedback 2
 ### Feedback 3
-#### Feedback 4
 
 ## Additional Visualizations and Exploratoration of Data
