@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target" : "es6"
+	},
+	"include" : [
+		"js/**/*"
+	],
+	"typeAcquisition": {
+		"enable": true,
+		"include": [
+			"d3",
+			"jquery",
+			"dimple-js",
+			"app"
+		]
+	}
+}
