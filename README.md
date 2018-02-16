@@ -70,6 +70,7 @@ After reviewing the design it was proposed to implement a clean solution that al
 
 ### Version 2 -> Feedback 2
 ![V2](https://github.com/rwatts3/udacity-viz/raw/master/images/v2.png)
+Based on the second round of feedback I determined that adding a label to the chart was efficient to show the user quickly what pieces of data they are comparing. 
 
 ### Version 3 -> Feedback 3
 ![V3](https://github.com/rwatts3/udacity-viz/raw/master/images/v3.png)
@@ -82,6 +83,7 @@ After reviewing the design it was proposed to implement a clean solution that al
 > The sketch looks very nice! I would suggest providing clean sections that allow the charts to be easily distinghishable between the other charts. 
 
 ### Feedback 2
+> The material design looks really nice. However I am unable to determine which what the purpose of the chart. Such as how do I know what the chart is comparing.
 ### Feedback 3
 
 ## Additional Visualizations and Exploratoration of Data
