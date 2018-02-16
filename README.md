@@ -59,6 +59,7 @@ By identifying the possible correlations as well as notating known variables we 
 
 ## Design
 ### Initial Sketch
+![Sketch](https://github.com/rwatts3/udacity-viz/raw/master/images/sketch.jpg)
 After performing a basic Exploratory Data Analysis on the dataset I was able to identify a few known variables as well as prepare a few questions.
 Given the type of data found during the exploratory Data Analysis I was able to determine that subsetting specific pieces of the data was an important way to focus on each visualization.
 Below is a sketch of the types of charts that will be used for the visualization.
@@ -68,11 +69,13 @@ Below is a sketch of the types of charts that will be used for the visualization
 After reviewing the design it was proposed to implement a clean solution that allows a viewer to easily navigate and distinguish between each chart.
 
 ### Version 2 -> Feedback 2
+![V2](https://github.com/rwatts3/udacity-viz/raw/master/images/v2.png)
 
 ### Version 3 -> Feedback 3
+![V3](https://github.com/rwatts3/udacity-viz/raw/master/images/v3.png)
 
-### Bar Charts
-### Line Charts
+### Chart Selections
+
 
 ## Feedback
 ### Feedback 1
