@@ -46,9 +46,8 @@ By identifying the possible correlations as well as notating known variables we 
 **Potential Questions**
 1. Does the variable `age` have any affect on the rate of survival?
 2. Does the variable `pclass` have any correlation to the rate of survival?
-3. Did the amount paid identified in the `fare` variable have an affect on the chance of survival?
-4. Does the type of `cabin` selected have any correlation to the passengers' chance of surviavl?
-5. Does the `sex` of the passenger have any significant value to their chance of survival?
+3. Does the variable `embark` have any correlation to the rate of survival?
+4. Does the `sex` of the passenger have any significant value to their chance of survival?
 
 **Assumptions / Predetermined Bias to Potential Questions**
 1. Women and children would have been a high priority to save during that time.
@@ -74,8 +73,31 @@ Based on the second round of feedback I determined that adding a label to the ch
 
 ### Version 3 -> Feedback 3
 ![V3](https://github.com/rwatts3/udacity-viz/raw/master/images/v3.png)
+This was great feedback. Having a quick overview of the chart's purpose and/or implementaiton can be beneficial to the viewer.
+I have now added an additional section after the chart ID that displays the Chart Type as well as a summary of the findings within the chart.
 
-### Chart Selections
+### Version 4 -> Final
+![Final](https://github.com/rwatts3/udacity-viz/raw/master/images/final.png)
+The final version of the project incorporates all of the revisions and updates from the feedback.
+
+### Code Details
+In `main.js` I have implemented an ES6 javascript class that encapsulates the loading and rendering of the charts and data.
+While developing my first round of the chart, I noticed that I wanted to explore with different chart types.
+Although dimple makes developing charts much easier vs. directly using d3.js there was still quite a bit of code needed to build each chart.
+
+I created an init function within the App class that simply serves as a central entrypoint to the chart rendering steps.
+I then created a `newChart` function that accepts a key paramaters needed to build the chart.
+The newChart function takes an id, callback function and a description.
+Using the Id the function then creates a dom element on the fly and appends it to the designated area for the chart.
+After this it then creates the most commonly used pieces accross each chart and calls the callback function passing the created chart instance to the function.
+This allows me to add or manipulate any changing pieces of the new chart, and finally takes a description that is used to display a description of the chart.
+
+A `renderCharts` function is used to encapsulate the bulk of the chart development.
+
+At the bottom of main.js I make a function call to load the csv chart data, then upon successful retrieval of that data,
+I then initialize a new instance of the App class passing the csvdata to the instance of the App via a constructor.
+
+This workflow allowed me to experiment with different chart types as I explored the data, without having to write a significant amount of code between each experiment.
 
 
 ## Feedback
@@ -85,5 +107,17 @@ Based on the second round of feedback I determined that adding a label to the ch
 ### Feedback 2
 > The material design looks really nice. However I am unable to determine which what the purpose of the chart. Such as how do I know what the chart is comparing.
 ### Feedback 3
+> It would be nice to see a detail or a quick summary text of what the chart is telling me. I could then use this information when I am looking at the chart to further expand my observation.
 
-## Additional Visualizations and Exploratoration of Data
+## Conclusion
+In order to properly build visualizations you must first understand the data you will be visualizing.
+Leveraging skills learned in the Data Wrangling and Exploratory Data Analysis course, 
+I was able to conduct quick EDA on the data to prepare a list of questions prior to rendering the initial sketch.
+After building the initial sketch and receiving feedback, I was then able to proceed with the initial development.
+
+Shortly after starting I realized that I had a need to explore different chart variations to see how they fit or represent the data.
+I then extended my code and created a solution to quickly switch between different `dimple` chart types.
+
+Utilizing the `materialize` framework has allowed me to focus more on chart building and slightly less on overal presentation.
+
+One of the most important things I learned from the feedback, is although the importance is within the data, it is also equally important to provide clean and visually appealing aesthetics to the visualization.

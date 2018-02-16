@@ -27,7 +27,6 @@
  * This is an ES6 Javascript Class that encapsulates the entire application.
  * NOTE: a browser supporting ES6 should be used to review this project.
  * 
- * 
  * @class App
  */
 class App {
@@ -65,7 +64,8 @@ class App {
 		let svg = dimple.newSvg(`#chart_${id}`, 600, 400);
 		// set predefined bounds that we will use accross all charts.
 		let p = new dimple.chart(svg, this.data);
-			p.setBounds(20, 20, 500, 300);		
+			p.setBounds(20, 20, 500, 300);
+			p.addLegend(500, 30, 90, 300, "left");
 		// callback to allow manipulization of the chart before we draw it.
 		cb(p);
 		// after the chart has been tailored draw the chart to the dom.
@@ -75,7 +75,8 @@ class App {
 	renderCharts() {
 		// Pie Chart : Survived -> Sex
 		this.newChart('Survived_Sex_Correlation', c => {
-			c.addMeasureAxis("p", "Survived"); c.addSeries("Sex", dimple.plot.pie);
+			c.addMeasureAxis("p", "Survived");
+			c.addSeries("Sex", dimple.plot.pie);
 			c.addLegend(500, 30, 90, 300, "left");
 		},`
 			<b>Chart Type : Pie</b> <br/>
@@ -83,18 +84,37 @@ class App {
 			While <b>68%</b> of the survivors were females.
 		`);
 		
-		// Bubble Chart :  Survived -> PClass
+		// HZ Grouped Bar Chart :  Survived -> PClass
 		this.newChart('Survived_PClass_Correlation', c => {
+			c.addMeasureAxis("x", "Survived");
+			c.addCategoryAxis("y", "Pclass");
+			c.addSeries("Pclass", dimple.plot.bar);
+		}, `
+			<b>Chart Type : HZ Grouped Bar</b> <br/>
+			More passengers from Pclass 1 survived than passengers from PClass 2 or 3.
+		`);
+		
+		// Pie Chart :  Survived -> Embarked
+		this.newChart('Survived_Embarked_Correlation', c => {
+			c.addMeasureAxis("p", "Survived");
+			c.addSeries("Embarked", dimple.plot.pie);
 			
 		}, `
-			<b>Chart Type : Bubble</b> <br/>
-			This visualization shows that only <b>32%</b> of the survivors were male passengers.
-			While <b>68%</b> of the survivors were females.
+			<b>Chart Type : Pie Chart</b> <br/>
+			Passengers in Embarked <b>S</b> were amongst <b>63%</b> of the people that survived.
 		`);
 		
 		
+		// Pie Chart :  Survived -> Embarked
+		this.newChart('Survived_Age_Sex_Animation', c => {
+			c.addMeasureAxis("p", "Age");
+			c.addSeries(["Age", "Sex"], dimple.plot.pie);
+			c.setStoryboard(["Age"]).startAnimation();
+		}, `
+			<b>Chart Type : Pie Chart Animation by Age-Survival-Sex</b> <br/>
+			This animation shows the survival by age, sex, and survival. It shows each age group and whether or not male vs. female within that group's survival rate.
+		`);
 	}
-	
 }
 
 /**
