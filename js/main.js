@@ -75,8 +75,9 @@ class App {
 	renderCharts() {
 		// Pie Chart : Survived -> Sex
 		this.newChart('Survived_Sex_Correlation', c => {
-			c.addMeasureAxis("p", "Survived");
-			c.addSeries("Sex", dimple.plot.pie);
+			c.addMeasureAxis("x", ["Survived"]);
+			c.addCategoryAxis("y", ["Survived", "Sex"]);
+			c.addSeries("Sex", dimple.plot.bar);
 			c.addLegend(500, 30, 90, 300, "left");
 		},`
 			<b>Chart Type : Pie</b> <br/>

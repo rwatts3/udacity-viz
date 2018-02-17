@@ -109,6 +109,21 @@ This workflow allowed me to experiment with different chart types as I explored 
 ### Feedback 3
 > It would be nice to see a detail or a quick summary text of what the chart is telling me. I could then use this information when I am looking at the chart to further expand my observation.
 
+### Udacity Feedback 1
+> The project renders almost fine. The only issue is that it is not possible to load js file by default:
+GET http://localhost:8005/udacity-viz/js/main.js net::ERR_ABORTED
+The issue is that base href specified. After I deleted it, I was able to load the project. Please, make sure it is possible to load the archive by default with the next submission.
+
+**Response**
+Thank you for pointing this out. I originally set the base href tag due to the fact that I hosted the project on github pages and it needed to be aware of the root path in order to load the files. I have now removed the base href in the code so that it can be reviewed easier. 
+
+### Udacity Feedback 2
+> The solution for the mentioned issues is simple: show % of survival in comparison to the total value, e.g if you want to show gender survival and there are 100 females survived out of 200 females it will be 50% survival rate. The same is for man. Probably bar chart will be more suitable for this case.
+
+**Response**
+I agree after taking a second look at the data, showing the comparison between survived true|false as well as sex male|female is important here.
+I have updated the viz to encorporate the suggestion. 
+
 ## Conclusion
 In order to properly build visualizations you must first understand the data you will be visualizing.
 Leveraging skills learned in the Data Wrangling and Exploratory Data Analysis course, 
